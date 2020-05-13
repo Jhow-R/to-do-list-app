@@ -14,6 +14,7 @@ class TarefaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         checkBoxTarefa.setOnCheckedChangeListener{_, isChecked ->
             item.concluida = isChecked
+            item.onUpdate?.invoke(item)
         }
 
         textViewTarefa.text = item.descricao
